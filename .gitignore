@@ -4,3 +4,7 @@
 
 yarn-error.log
 tsconfig.json
+prettier.config
+.editorconfig
+.eslintrc.json
+prettier.config.js
