@@ -78,6 +78,8 @@ export default {
 
     const orphanage = orphanagesRepository.create(data);
 
+    console.log(orphanage.open_on_weekends);
+
     await orphanagesRepository.save(orphanage);
 
     response.status(201).json(orphanage);
