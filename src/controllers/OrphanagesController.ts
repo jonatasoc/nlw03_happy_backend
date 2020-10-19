@@ -67,7 +67,7 @@ export default {
       open_on_weekends: Yup.string().required(),
       images: Yup.array(
         Yup.object().shape({
-          paht: Yup.string().required()
+          path: Yup.string().required()
         })
       )
     });
