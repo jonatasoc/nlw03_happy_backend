@@ -10,3 +10,5 @@ prettier.config
 .editorconfig
 .eslintrc.json
 prettier.config.js
+
+database.sqlite

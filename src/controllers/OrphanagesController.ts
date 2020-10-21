@@ -52,8 +52,8 @@ export default {
       about,
       instructions,
       opening_hours,
-      open_on_weekends,
-      images
+      open_on_weekends: open_on_weekends === 'true', // Casting string to boolean,
+      images,
     }
 
     // Criando Schema e Validação com o Yup
@@ -64,7 +64,7 @@ export default {
       about: Yup.string().required().max(300),
       instructions: Yup.string().required(),
       opening_hours: Yup.string().required(),
-      open_on_weekends: Yup.string().required(),
+      open_on_weekends: Yup.bool().required(),
       images: Yup.array(
         Yup.object().shape({
           path: Yup.string().required()
@@ -77,8 +77,6 @@ export default {
     });
 
     const orphanage = orphanagesRepository.create(data);
-
-    console.log(orphanage.open_on_weekends);
 
     await orphanagesRepository.save(orphanage);
 
